@@ -235,6 +235,6 @@ Example: 例：
 
 
 
-![qrcode_1706228706782](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/assets/138156577/1296a517-9958-44ea-be73-a2433d455544)
+<img src="https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/assets/138156577/1296a517-9958-44ea-be73-a2433d455544" width="200">
 
 
