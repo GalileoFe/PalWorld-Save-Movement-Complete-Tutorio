@@ -186,6 +186,12 @@ python fix-host-save.py "C:\Users\John\.cargo\bin\uesave.exe" "C:\Users\John\Des
 
 ## 已知bug
 
+### 在PART II重建玩家存档之后仍需要新建角色
+
+请你新建角色，关闭服务器。
+之后仅将players文件夹覆盖。
+这一次不需要转移leve.sav文件。
+
 ### 帕鲁错误
 
 玩家拥有的帕鲁不会在基地做任何事情，或者被举起。这可能是由于帕鲁没有正确被识别为你的帕鲁。
