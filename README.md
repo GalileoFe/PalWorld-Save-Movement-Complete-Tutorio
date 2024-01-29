@@ -26,7 +26,7 @@
 
 3. 存档文件位置 - 在你的服务器文件夹下找到 `Pal\Saved\SaveGames\<random_numbers>` 路径，保存。个人建议将整个 `Saved` 文件夹打包，以便进行未来的操作。
 
-4. 下载压缩包 - 我会提供一个打包好的压缩包，里面包含了进行存档转移所需的所有必要文件。
+4. 下载压缩包 - 我会提供一个打包好的压缩包，你可以在[这里](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/releases/tag/RepairKit)下载，里面包含了进行存档转移所需的所有必要文件。
 
 5. 解压到合适位置 - 将压缩包解压到一个合适的位置。例如，你可以创建一个名为 `mirage_save` 的文件夹，用于存放解压后的文件。
 
