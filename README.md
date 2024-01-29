@@ -131,6 +131,24 @@ python fix-host-save.py "C:\Users\John\.cargo\bin\uesave.exe" "C:\Users\John\Des
 
 > 此脚本的作用是将一个 `GUID.sav` 迁移到另一个 `GUID.sav`，同时修改 `Level.sav` 以保证数据一致性。
 
+> ⚠︎⚠︎⚠︎`<save_path>`**为你附带Level.sav的整个文件夹，包含了Players文件**⚠︎⚠︎⚠︎
+> 文档树如下
+>
+```bash
+PalRepairkit/
+│
+├── uesave.exe
+├── fix-host-save.py
+└── 2E85FD38BAA792EB1D4C09386F3A3CD/
+    │
+    ├── Level.sav
+    ├── Levelmeta.sav
+    └── players/
+        │
+        ├── 6E80B1A6000000000000000000000000.sav
+        └── 809D6A91000000000000000000000000.sav
+```
+
 ### 开始
 
 #### PART I:
@@ -205,8 +223,8 @@ python fix-host-save.py "C:\Users\John\.cargo\bin\uesave.exe" "C:\Users\John\Des
 
 ### 第三部 存档转移
 - 使用PalRepairKit里的fix-host-save.py文件（用法）将老存档的内容合并到新建存档。
-- 具体步骤参考转移合作模式存档到服务器。
-- 具体bug解决方式参考已知bug。
+- 具体步骤参考[转移合作模式存档到服务器](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/blob/main/README.md#%E4%BB%8E%E5%90%88%E4%BD%9C%E6%A8%A1%E5%BC%8F%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8)。
+- 具体 bug 解决方式参考[已知 bug](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/blob/main/README.md#%E5%B7%B2%E7%9F%A5bug)。
 
 
 **如果你成功了，欢迎你也写教程发出来。社区因你而精彩。**
