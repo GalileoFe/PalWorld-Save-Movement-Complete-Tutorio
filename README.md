@@ -254,6 +254,7 @@ PalRepairkit/
 > 2. 如果你的系统上已经安装了Steam：
 >
 >   - 请先卸载现有的Steam，然后重新安装。
+
 > 对于Linux用户：
 > - 删除 ~/.steam/sdk64 这个文件夹来处理游戏角色的重建问题。
 > - docker安装：新建空文件夹映射/home/steam/.steam/sdk64为只读。
