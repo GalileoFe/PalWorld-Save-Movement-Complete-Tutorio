@@ -11,7 +11,7 @@
 > :warning:
 > 
 > 
-> This transfer operation may cause the following issues with your save files:
+> This transfer operation may cause the following issues with your saved files:
 > 
 > - Being taken away by the Dark Witch's Cat.
 > - Being exploded by the Bomb Bird.
@@ -27,12 +27,12 @@ This guide is intended for players who have an adventurous spirit, some computer
 
 Before we begin, please make sure you have the following prepared:
 
-1. Archive of the old host - You need to obtain the save file of the creature Palu from your old host. This is an essential part of the transfer process.
+1. Archive of the old host - You need to obtain the saved file of the creature Palu from your old host. This is an essential part of the transfer process.
 2. New cloud server - Prepare a new cloud server to store and run the new save file of Palu.
-3. Save file location - Find the path `Pal\\\\Saved\\\\SaveGames\\\\<random_numbers>` in your server folder and save it. I recommend packing the entire "Saved" folder for future operations.
+3. Save file location - Find the path `Pal\\Saved\\SaveGames\\<random_numbers>` in your server folder and save it. I recommend packing the entire "Saved" folder for future operations.
 4. Download the archive - I will provide a packaged archive that you can download from [here](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/releases/tag/RepairKit). It contains all the necessary files for the save file transfer.
 5. Extract to a suitable location - Extract the archive to a suitable location. For example, you can create a folder named "mirage_save" to store the extracted files.
-6. Confirm the server for your existing save file
+6. Confirm the server for your existing saved file
     - LinuxServer Manual Install with Official Guide
     - LinuxServer service panel server
     - WinServer with steamcmd
@@ -72,16 +72,16 @@ The player PID in PalWorld is determined based on two factors (based on my unver
 1. Make sure the APPID of your server remains the same before and after the transfer. (16 is equivalent to 23)
 2. Log in to the server to create a new world.
 3. **Shut down the server.**
-4. Delete `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\`
+4. Delete `PalServer\\Pal\\Saved\\SaveGames\\0\\`
 5. For Linux:
-In the `PalServer\\\\Pal\\\\Saved\\\\Config\\\\LinuxServer\\\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`.
+In the `PalServer\\Pal\\Saved\\Config\\LinuxServer\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`.
 For Windows:
-In the `PalServer\\\\Pal\\\\Saved\\\\Config\\\\WindowsServer\\\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`.
-6. Copy your saved game to `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\`.
+In the `PalServer\\Pal\\Saved\\Config\\WindowsServer\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`.
+6. Copy your saved game to `PalServer\\Pal\\Saved\\SaveGames\\0\\`.
     
-    > Similar to PalServer\\Pal\\Saved\\SaveGames\\0\\\\<your_save_here>\\
+    > Similar to PalServer\\Pal\\Saved\\SaveGames\\0\\<your_save_here>\\
     > 
-7. Delete `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\<your_save_here>\\\\WorldOption.sav` (**This may not exist, which is normal. If it doesn't exist, there's no need to delete it**) to allow modifications to `PalWorldSettings.ini`. (This will cause players to lose their map and respawn points)
+7. Delete `PalServer\\Pal\\Saved\\SaveGames\\0\\<your_save_here>\\WorldOption.sav` (**This may not exist, which is normal. If it doesn't exist, there's no need to delete it**) to allow modifications to `PalWorldSettings.ini`. (This will cause players to lose their map and respawn points)
 8. Log in to the server and verify if the transfer was successful. If it wasn't, go back to determine the source of your saved game player PID.
 
 Your save game should have been transferred successfully.
@@ -90,7 +90,7 @@ Your save game should have been transferred successfully.
 
 The biggest difference between Cooperative Mode and Server is the migration of host saves. In Cooperative Mode, the ID of the host player in the local save file is `00000000000000000000000000000001.sav`.
 
-Therefore, Paru Discord has a genius who wrote a Python script to convert the save file. The script can be found at the following address:
+Therefore, Paru Discord has a genius who wrote a Python script to convert the saved file. The script can be found at the following address:
 
 [Palworld Host Save Fix](https://github.com/xNul/palworld-host-save-fix)
 
@@ -109,7 +109,7 @@ Here are the steps:
 
 Command:
 
-```
+```bash
 python fix-host-save.py <uesave.exe> <save_path> <new_guid> <old_guid>
 ```
 
@@ -125,8 +125,8 @@ python fix-host-save.py <uesave.exe> <save_path> <new_guid> <old_guid>
 
 Example:
 
-```
-python fix-host-save.py "C:\\\\Users\\\\John\\\\.cargo\\\\bin\\\\uesave.exe" "C:\\\\Users\\\\John\\\\Desktop\\\\my_temporary_folder\\\\2E85FD38BAA792EB1D4C09386F3A3CDA" 6E80B1A6000000000000000000000000 00000000000000000000000000000001
+```bash
+python fix-host-save.py "C:\\Users\\John\\.cargo\\bin\\uesave.exe" "C:\\Users\\John\\Desktop\\my_temporary_folder\\2E85FD38BAA792EB1D4C09386F3A3CDA" 6E80B1A6000000000000000000000000 00000000000000000000000000000001
 ```
 
 > This script is used to migrate a GUID.sav to another GUID.sav while modifying Level.sav to ensure data consistency.
@@ -158,27 +158,27 @@ PalRepairkit/
 1. Determine your server APPID before and after the transfer remains the same.
 2. Log in to the server to create a new world.
 3. **Shut down the server.**
-4. Delete `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\`
+4. Delete `PalServer\\Pal\\Saved\\SaveGames\\0\\`
 5. For Linux:
-In the `PalServer\\\\Pal\\\\Saved\\\\Config\\\\LinuxServer\\\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, then change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`. For Windows:
-In the `PalServer\\\\Pal\\\\Saved\\\\Config\\\\WindowsServer\\\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, then change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`.
-6. Copy your save files to `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\`.
+In the `PalServer\\Pal\\Saved\\Config\\LinuxServer\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, then change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`. For Windows:
+In the `PalServer\\Pal\\Saved\\Config\\WindowsServer\\GameUserSettings.ini` file, change `DedicatedServerName` to match the name of the saved folder. For example, if the saved folder name is `2E85FD38BAA792EB1D4C09386F3A3CDA`, then change `DedicatedServerName` to `DedicatedServerName=2E85FD38BAA792EB1D4C09386F3A3CDA`.
+6. Copy your save files to `PalServer\\Pal\\Saved\\SaveGames\\0\\`.
     
-    > Similar to PalServer\\Pal\\Saved\\SaveGames\\0\\\\<your_save_here>\\
+    > Similar to PalServer\\Pal\\Saved\\SaveGames\\0\\<your_save_here>\\
     > 
-7. Delete `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\<your_save_here>\\\\WorldOption.sav` (**It may not exist, which is normal and does not need to be deleted**) to allow modifications to `PalWorldSettings.ini`. (This will cause players to lose maps and respawn points)
+7. Delete `PalServer\\Pal\\Saved\\SaveGames\\0\\<your_save_here>\\WorldOption.sav` (**It may not exist, which is normal and does not need to be deleted**) to allow modifications to `PalWorldSettings.ini`. (This will cause players to lose maps and respawn points)
 8. **Ask your friend to log in to the server to verify if the transfer was successful. If it is not successful, go back to determine the source of your save player PID.**
 
 ### PART II
 
 1. If successful, now start resolving your save issues as the host.
 2. Log in to the server, create a character, and create a save point.
-3. At this point, you will see a new `<GUID>.sav` save file in the `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\<your_save_here>\\\\` folder. This is your save file.
-4. Shut down the server, then copy the entire dedicated server save `PalServer\\\\Pal\\\\Saved\\\\SaveGames\\\\0\\\\<your_save_here>` (with the new cooperative host character!) to a temporary folder and remember the path to the temporary folder as it will be needed to run the script.
+3. At this point, you will see a new `<GUID>.sav` save file in the `PalServer\\Pal\\Saved\\SaveGames\\0\\<your_save_here>\\` folder. This is your saved file.
+4. Shut down the server, then copy the entire dedicated server save `PalServer\\Pal\\Saved\\SaveGames\\0\\<your_save_here>` (with the new cooperative host character!) to a temporary folder and remember the path to the temporary folder as it will be needed to run the script.
 5. **Backup your save file!** (Unless you want to say goodbye to Palu forever)
 6. Use the `fix-host-save.py` script to replace your old save file `00000000000000000000000000000001.sav` with `<New_GUID>.sav`.
-7. Copy the save file back to the dedicated server from the temporary folder.
-8. Start the server, and you should be able to enter the game normally. At this point, your save file has been successfully transferred.
+7. Copy the saved file back to the dedicated server from the temporary folder.
+8. Start the server, and you should be able to enter the game normally. At this point, your saved file has been successfully transferred.
 9. If your companions are no longer attacking or working in the base, follow the instructions in Palu Errors to fix them.
 
 ## Transferring Save Files from Cooperative Mode to Another Cooperative Mode/From Hosting to Cooperative Mode
@@ -201,10 +201,8 @@ Use a suitable method to get the PID. Here, we will explain a relatively simple 
 /adminpassword <password>
 2. Press "esc" to open the game menu and find the string of numbers behind your character's name. Take note of it.
 3. Open the calculator on Windows (available since Windows 7), switch to programmer mode, enter this string of numbers, and view the hexadecimal (HEX) value.
-    
-    https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/assets/138156577/cf360104-f1a5-4c85-a593-6cd186871d34
-    
-    https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/assets/138156577/59cfaeea-4ba4-41ce-910d-355ab3550d5a
+![image](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/assets/138156577/cf360104-f1a5-4c85-a593-6cd186871d34)
+![image](https://github.com/GalileoFe/PalWorld-Save-Movement-Complete-Tutorio/assets/138156577/59cfaeea-4ba4-41ce-910d-355ab3550d5a)
     
 4. In the savegames/0/<combination of English numerals>/players/ folder, find the .sav file with the same hexadecimal value. This file is your original save file.
 
@@ -250,9 +248,9 @@ Solution: On the new server, after saving the fix, discard the Palu on the groun
 
 > For Linux users:
 > 
-> - Delete the ~/.steam/sdk64 folder to address the issue of rebuilding the game character.
-> - Docker installation: Create an empty folder mapping /home/steam/.steam/sdk64 as read-only.
-> If it still doesn't work, run docker exec -it <container name> bash, [enter the container and search for steamclient.so](http://steamclient.so/), the command is find / -name [steamclient.so](http://steamclient.so/), and map all of them to empty read-only files.
+> - Delete the `~/.steam/sdk64` folder to address the issue of rebuilding the game character.
+> - Docker installation: Create an empty folder mapping `/home/steam/.steam/sdk64` as read-only.
+> If it still doesn't work, run `docker exec -it <container name> bash`, [enter the container and search for steamclient.so](http://steamclient.so/), the command is `find / -name [steamclient.so](http://steamclient.so/)`, and map all of them to empty read-only files.
 
 ### Server Save File Crashes After Opening
 
@@ -262,7 +260,7 @@ The server save file has been successfully migrated, but the server crashes afte
 2. If it is confirmed that the folder is set as read-only, please change the permission of the save file folder to 777 (allowing read, write, and execute operations).
 3. On a Linux system, you can use the following command to change permissions:
     
-    ```
+    ```bash
     chmod 777 [save file folder path]
     ```
     
